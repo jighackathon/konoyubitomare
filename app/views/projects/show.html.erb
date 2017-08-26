@@ -13,7 +13,51 @@
 <p>
   <strong>Skills:</strong>
   <% @project.skills.each do |skill| %>
-    <%= skill %>
+      <%= skill.skill %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Main Members:</strong>
+  <% @members.each do |member| %>
+      <%= member.user.name %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Temp Members:</strong>
+  <% @temp_members.each do |member| %>
+      <div>
+        <%= member.user.email %>
+        <% if @user_is_owner %>
+          <%#= button_to "認証", {controller: 'projects', action: 'approve'}, {method: :post} %>
+          <%= button_to "認証", action: "approve" %>
+      <% end %>
+      </div>
+  <% end %>
+</p>
+
+<!--<p>-->
+  <%#= form_with(model: @new_messages) do |form| %>
+    <%#= form.label :content %>
+    <%#= form.text_area :content %>
+
+      <%# binding.pry %>
+    <%#= form.submit %>
+  <%# end %>
+<!--</p>-->
+
+<p>
+  <strong>Messages:</strong>
+  <% @messages.each do |message| %>
+      <%= message.user.email %>
+      <%= message.content %>
+  <% end %>
+</p>
+
+<p>
+  <% unless @user_is_owner %>
+    <%= button_to "参加", :action => "apply" %>
   <% end %>
 </p>
 

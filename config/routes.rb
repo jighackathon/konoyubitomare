@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_profiles
+  resources :user_skills
   devise_for :users
   resources :skills
   resources :projects

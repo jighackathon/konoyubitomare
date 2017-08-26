@@ -10,13 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826044931) do
+ActiveRecord::Schema.define(version: 20170826051725) do
+
+  create_table "project_skills", force: :cascade do |t|
+    t.integer "projcect_id"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["projcect_id"], name: "index_project_skills_on_projcect_id"
+    t.index ["skill_id"], name: "index_project_skills_on_skill_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.text "detail", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "skill", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.string "name"
+    t.text "introduction"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.integer "user_profile_id"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_user_skills_on_skill_id"
+    t.index ["user_profile_id"], name: "index_user_skills_on_user_profile_id"
   end
 
   create_table "users", force: :cascade do |t|

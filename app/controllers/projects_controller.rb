@@ -65,7 +65,8 @@ class ProjectsController < ApplicationController
     # @params[:project_skill_ids].each do |id|
     #   @project.project_skills.build(skill_id: id)
     @project = Project.new(project_params)
-    binding.pry
+    # binding.pry
+    @project.user_id = current_user.id
 
     respond_to do |format|
       if @project.save

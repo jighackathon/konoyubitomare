@@ -12,17 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label 'プロジェクト名' %>
     <%= form.text_field :title, id: :project_title %>
   </div>
 
   <div class="field">
-    <%= form.label :detail %>
+    <%= form.label '詳細' %>
     <%= form.text_area :detail, id: :project_detail %>
   </div>
 
   <div class="form-group">
-    <%= form.label :ProjectSkill %>
+    <%= form.label '求める技術' %>
     <%# binding.pry %>
     <%= form.collection_check_boxes(:skill_ids, @skills, :id, :skill) do |b| %>
       <%= b.label { b.check_box + b.text } %>

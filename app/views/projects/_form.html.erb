@@ -21,7 +21,7 @@
     <%= form.text_area :detail, id: :project_detail %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= form.label '求める技術' %>
     <%# binding.pry %>
     <%= form.collection_check_boxes(:skill_ids, @skills, :id, :skill) do |b| %>

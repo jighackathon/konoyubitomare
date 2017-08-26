@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @chat_messages = ChatMessage.all
+    
   end
 
   # GET /projects/new

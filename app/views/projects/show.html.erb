@@ -17,5 +17,23 @@
   <% end %>
 </p>
 
+<h6>コメント</h6>
+<table>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @chat_messages.each do |chat_message| %>
+      <tr>
+        <td><%= chat_message.content %></td>
+        <td><%= link_to 'Show', chat_message %></td>
+        <td><%= link_to 'Edit', edit_chat_message_path(chat_message) %></td>
+        <td><%= link_to 'Destroy', chat_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

@@ -1,14 +1,43 @@
-﻿<html lang="">
+﻿<!DOCTYPE html>
+<html lang="ja">
 <head>
- <title>ログイン</title>
+ <title>ログイン画面 - この指とまれ！</title>
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+ <style type="text/css">
+ #box {
+ 	width: 240px;
+ 	margin: 240px auto 0 auto;
+ 	text-align: right;
+ }
+ #box a {
+ 	font-size: 10pt;
+ }
+ .form-signin input {
+ 	outline: 0;
+ 	margin-bottom: 2px;
+ 	width: 240px;
+ }
+ .form-signin button {
+ 	display: block;
+ 	width: 240px;
+ 	height: 32px;
+ 	padding: 0;
+ 	margin: 0;
+ 	border: 0;
+ 	outline: 0;
+ 	cursor: pointer;
+ }
+ </style>
 </head>
 <body>
-<div id="login_box">
-<h1>Login</h1>
-<form style="text-align:right">
-<p>id:<input type="text"></p>
-<p>pass:<input type="text"></p>
-</form>
+<div id="box">
+	<form action="#" class="form-signin">
+	<input type="text" name="id" placeholder="ユーザID" required autofocus>
+	<input type="password" name="pass" placeholder="パスワード" required>
+	<button type="submit" >Login</button>
+	</form>
+	<a href="#">アカウントの作成</a>
 </div>
 </body>
 </html>

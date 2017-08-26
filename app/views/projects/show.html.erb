@@ -10,5 +10,12 @@
   <%= @project.detail %>
 </p>
 
+<p>
+  <strong>Skills:</strong>
+  <% @project.skills.each do |skill| %>
+    <%= skill %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

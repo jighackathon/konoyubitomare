@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 20170826045248) do
 
   create_table "project_skills", force: :cascade do |t|
-    t.integer "projcect_id"
+    t.integer "project_id"
     t.integer "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["projcect_id"], name: "index_project_skills_on_projcect_id"
+    t.index ["project_id"], name: "index_project_skills_on_project_id"
     t.index ["skill_id"], name: "index_project_skills_on_skill_id"
   end
 

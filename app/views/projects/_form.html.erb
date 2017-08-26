@@ -23,11 +23,10 @@
 
   <div class="form-group">
     <%= form.label :ProjectSkill %>
-    <div>
-      <%= form.collection_check_boxes(:project_skill_ids, @project_skills, :id, :skill) do |b| %>
-          <%= b.label { b.check_box + b.text } %>
-      <% end %>
-    </div>
+    <%# binding.pry %>
+    <%= form.collection_check_boxes(:skill_ids, @skills, :id, :skill) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
   </div>
 
   <div class="actions">

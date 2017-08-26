@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @project_skills = ProjectSkill.all
+    @skills = Skill.all
   end
 
   # GET /projects/1/edit
@@ -25,7 +25,12 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    # @params = project_params
+    # @project = Project.new(title: @params[:title], detail: @params[:detail])
+    # @params[:project_skill_ids].each do |id|
+    #   @project.project_skills.build(skill_id: id)
     @project = Project.new(project_params)
+    binding.pry
 
     respond_to do |format|
       if @project.save
@@ -70,6 +75,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :detail)
+      params.require(:project).permit(:title, :detail, {:skill_ids => []})
     end
 end

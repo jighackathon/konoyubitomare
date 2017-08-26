@@ -1,0 +1,35 @@
+﻿html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+
+#wrap {
+	border: 1px solid #c00;
+	overflow: hidden;
+	height: 100%;
+}
+#main {
+  float: right;
+  width: 100%;
+  margin: 0 0 0 -150px;
+	height: 100%;
+}
+#side {
+  float: left;
+  width: 100px;
+	height: 100%;
+  background: #FFCB3D;
+}
+#content {
+  margin: 0 0 0 100px;
+  background: #FFF;
+	height: 100%;
+}
+#myimg {
+	width: 50px;
+	height: 50px;
+}

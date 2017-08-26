@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chat_messages
   resources :project_members
   resources :user_profiles
   resources :user_skills
